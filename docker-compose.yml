@@ -1,0 +1,15 @@
+version: "3"
+services:
+  react:
+    container_name: settings
+    build:
+      context: .
+      dockerfile: dockerfile.dev
+    ports:
+      - "3000:3000"
+    volumes:
+      - /settings/node_modules
+      - ./:/settings
+    stdin_open: true
+    environment:
+      WATCHPACK_POLLING: true
